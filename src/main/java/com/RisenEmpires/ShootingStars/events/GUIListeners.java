@@ -28,8 +28,20 @@ public class GUIListeners implements Listener{
 		}
 		
 		switch (event.getCurrentItem().getType()) {
-			case DIAMOND_CHESTPLATE:
-				player.performCommand("");
+			case NETHER_STAR:
+				player.performCommand("stars spawn");
+				player.closeInventory();
+				break;
+			case PUMPKIN_PIE:
+				player.performCommand("stars reload");
+				player.closeInventory();
+				break;
+			case LADDER:
+				player.performCommand("stars version");
+				player.closeInventory();
+				break;
+			case HOPPER:
+				player.performCommand("stars update");
 				player.closeInventory();
 				break;
 			default:

@@ -21,17 +21,56 @@ public class InventoryGUI implements Listener {
 				Inventory inventory = Bukkit.createInventory(null, 9, ChatColor.AQUA + "Shooting Star Commands");
 				
 				if ((player.hasPermission("shootingstars.spawn") || player.hasPermission("shootingstars.*") || player.isOp())) {
-					ItemStack spawn = new ItemStack (Material.NETHER_STAR);
-					ItemMeta spawnMeta = spawn.getItemMeta();
-					List<String> spawnLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Spawn",
+					ItemStack item = new ItemStack (Material.NETHER_STAR);
+					ItemMeta itemMeta = item.getItemMeta();
+					List<String> itemLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Spawn",
 							ChatColor.RESET + "Spawns a star in 3 minutes at your location");
 					
-					spawnMeta.setDisplayName(ChatColor.GREEN + "Spawn");
+					itemMeta.setDisplayName(ChatColor.GREEN + "Spawn");
 
-					spawnMeta.setLore(spawnLore);
-					spawn.setItemMeta(spawnMeta);
+					itemMeta.setLore(itemLore);
+					item.setItemMeta(itemMeta);
 					
-					inventory.setItem(5, spawn);
+					inventory.setItem(5, item);
+				}
+				if ((player.hasPermission("shootingstars.reload") || player.hasPermission("shootingstars.*") || player.isOp())) {
+					ItemStack item = new ItemStack (Material.PUMPKIN_PIE);
+					ItemMeta itemMeta = item.getItemMeta();
+					List<String> itemLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Spawn",
+							ChatColor.RESET + "Spawns a star in 3 minutes at your location");
+					
+					itemMeta.setDisplayName(ChatColor.GREEN + "Reload");
+
+					itemMeta.setLore(itemLore);
+					item.setItemMeta(itemMeta);
+					
+					inventory.setItem(5, item);
+				}
+				if ((player.hasPermission("shootingstars.version") || player.hasPermission("shootingstars.*") || player.isOp())) {
+					ItemStack item = new ItemStack (Material.LADDER);
+					ItemMeta itemMeta = item.getItemMeta();
+					List<String> itemLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Spawn",
+							ChatColor.RESET + "Spawns a star in 3 minutes at your location");
+					
+					itemMeta.setDisplayName(ChatColor.GREEN + "Version");
+
+					itemMeta.setLore(itemLore);
+					item.setItemMeta(itemMeta);
+					
+					inventory.setItem(5, item);
+				}
+				if ((player.hasPermission("shootingstars.update")) || (player.hasPermission("shootingstars.*"))) {
+					ItemStack item = new ItemStack (Material.HOPPER);
+					ItemMeta itemMeta = item.getItemMeta();
+					List<String> itemLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Update",
+							ChatColor.RESET + "Checks for updates and installs them");
+					
+					itemMeta.setDisplayName(ChatColor.GREEN + "Update");
+
+					itemMeta.setLore(itemLore);
+					item.setItemMeta(itemMeta);
+					
+					inventory.setItem(5, item);
 				}
 				
 				player.openInventory(inventory);
