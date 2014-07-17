@@ -1,0 +1,30 @@
+name: Shooting Stars
+main: com.RisenEmpires.ShootingStars.ShootingStars
+version: ${project.build.version}
+author: Mammothskier
+
+commands:
+    stars:
+        description:  opens the Shooting Stars GUI.
+
+permissions:
+    shootingstars.*:
+        description: Gives all permissions.
+        default: false
+        children:
+            shootingstars.reload: true
+            shootingstars.debug: true
+            shootingstars.spawn: true
+            shootingstars.version: true
+    shootingstars.reload:
+        description: Reloads the config file.
+        default: false
+    shootingstars.debug:
+        description: Shows Debug messages.
+        default: false
+    shootingstars.spawn:
+        description: Spawns a star at the given location.
+        default: false
+    shootingstars.version:
+        description: Displays the version of the plugin running on the server.
+        default: false

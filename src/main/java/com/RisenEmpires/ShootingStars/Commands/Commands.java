@@ -1,4 +1,4 @@
-package com.RisenEmpires.ShootingStars;
+package com.RisenEmpires.ShootingStars.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,11 +29,13 @@ public class Commands implements CommandExecutor {
 						player.sendMessage(ChatColor.RED + "You do not have permission to use this command");
 					}
 				}
+				
 				if (args[0].equalsIgnoreCase("spawn")) {
 					if ((player.hasPermission("shootingstars.spawn")) || (player.isOp()) || (player.hasPermission("shootingstars.*"))) {
 						
 					}
 				}
+				
 				if (args[0].equalsIgnoreCase("reload")) {
 					if ((player.hasPermission("shootingstars.reload")) || (player.isOp()) || (player.hasPermission("shootingstars.*"))) {
 						API.getFileHandler().loadFiles();
@@ -43,6 +45,7 @@ public class Commands implements CommandExecutor {
 						player.sendMessage(ChatColor.RED + "You do not have permission to use this command");
 					}
 				}
+				
 				if (args[0].equalsIgnoreCase("version")) {
 					if((player.hasPermission("shootingstars.version")) || (player.isOp()) || (player.hasPermission("shootingstars.*"))){
 						PluginDescriptionFile pdf = Bukkit.getPluginManager().getPlugin("Shooting Stars").getDescription();
