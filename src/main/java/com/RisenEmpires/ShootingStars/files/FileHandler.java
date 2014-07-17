@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
 
 import com.RisenEmpires.ShootingStars.ShootingStars;
 
@@ -79,6 +81,7 @@ public class FileHandler {
 		}
 		return null;
 	}
+	
 	public String setProperty(Files file, String path, String value){
 		FileConfiguration conf = _configurations.get(file);
 		if (conf != null) {

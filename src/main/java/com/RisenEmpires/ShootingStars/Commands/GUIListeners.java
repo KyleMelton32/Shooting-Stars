@@ -1,4 +1,4 @@
-package com.RisenEmpires.ShootingStars.events;
+package com.RisenEmpires.ShootingStars.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

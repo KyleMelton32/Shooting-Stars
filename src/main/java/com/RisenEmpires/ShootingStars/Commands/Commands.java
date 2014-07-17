@@ -1,7 +1,10 @@
 package com.RisenEmpires.ShootingStars.Commands;
 
+import java.io.File;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 
 import com.RisenEmpires.ShootingStars.utils.API;
+import com.RisenEmpires.ShootingStars.utils.TerrainManager;
 
 public class Commands implements CommandExecutor {
 
@@ -32,7 +36,14 @@ public class Commands implements CommandExecutor {
 				
 				if (args[0].equalsIgnoreCase("spawn")) {
 					if ((player.hasPermission("shootingstars.spawn")) || (player.isOp()) || (player.hasPermission("shootingstars.*"))) {
-						
+						Location location = player.getLocation();
+						TerrainManager tm = new TerrainManager(null, player);
+						File saveFile = new File( "plugins/Shooting Stars", "star");
+						 try {
+			                    tm.loadSchematic(saveFile, location);
+			                } catch (Exception e) {
+			                    e.printStackTrace();
+			                }
 					}
 				}
 				
