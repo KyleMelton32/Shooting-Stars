@@ -38,12 +38,13 @@ public class Commands implements CommandExecutor {
 					if ((player.hasPermission("shootingstars.spawn")) || (player.isOp()) || (player.hasPermission("shootingstars.*"))) {
 						Location location = player.getLocation();
 						TerrainManager tm = new TerrainManager(null, player);
-						File saveFile = new File( "plugins/Shooting Stars", "star");
-						 try {
-			                    tm.loadSchematic(saveFile, location);
-			                } catch (Exception e) {
-			                    e.printStackTrace();
-			                }
+						File saveFile = new File( "/plugins/Shooting Stars", "star");
+						player.sendMessage(ChatColor.AQUA + "[Shooting Stars] " + ChatColor.GREEN + "A star has crashed at your location!");
+						try {
+							tm.loadSchematic(saveFile, location);
+			             } catch (Exception e) {
+			            	 e.printStackTrace();
+			             }
 					}
 				}
 				
