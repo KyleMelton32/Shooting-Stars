@@ -1,6 +1,7 @@
 package com.RisenEmpires.ShootingStars.utils;
 
 import com.RisenEmpires.ShootingStars.ShootingStars;
+import com.RisenEmpires.ShootingStars.Commands.Commands;
 import com.RisenEmpires.ShootingStars.Commands.GUIListeners;
 import com.RisenEmpires.ShootingStars.files.FileHandler;
 
@@ -15,6 +16,7 @@ public class API {
 		fileHandler = new FileHandler(_stars);
 		new InventoryGUI();
 		new GUIListeners();
+		new Commands();
 	}
 	
 	public static FileHandler getFileHandler() {
