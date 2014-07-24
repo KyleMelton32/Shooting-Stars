@@ -1,7 +1,7 @@
 package com.RisenEmpires.ShootingStars.files;
 
 public enum Files {
-	CONFIG("plugins/Shooting Stars/config.yml");
+	CONFIG("plugins/Shooting_Stars/config.yml");
 	
 	private final String _path;
 

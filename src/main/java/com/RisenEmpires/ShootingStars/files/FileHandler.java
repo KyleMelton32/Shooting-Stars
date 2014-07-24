@@ -5,11 +5,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
-
 import com.RisenEmpires.ShootingStars.ShootingStars;
 
 public class FileHandler {
