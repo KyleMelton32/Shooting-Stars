@@ -11,23 +11,37 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 
+import com.RisenEmpires.ShootingStars.ShootingStars;
+import com.RisenEmpires.ShootingStars.files.Files;
 import com.RisenEmpires.ShootingStars.utils.API;
 import com.RisenEmpires.ShootingStars.utils.TerrainManager;
 
 public class Commands implements CommandExecutor {
+	private  ShootingStars _stars;
+
+	public Commands(ShootingStars ha) {
+		_stars = ha;
+	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
 		if (commandLabel.equalsIgnoreCase("stars")) {
 			if (sender instanceof Player){
 				Player player = (Player) sender;
-				if (args.length == 0){
+				if (args.length == 0) {
 					if (player.hasPermission("shootingstars.reload") ||
 							player.hasPermission("shootingstars.*") ||
 							player.hasPermission("shootingstars.spawn") ||
 							player.hasPermission("shootingstars.version") ||
 							player.hasPermission("shootingstars.update") ||
 							player.isOp()) {
+						String GUI = API.getFileHandler().getProperty(Files.CONFIG, "Shooting Stars Configuration.Enable GUI");
+						if (API.getFileHandler().getProperty(Files.CONFIG, "Shooting Stars Configuration.Enable GUI").equalsIgnoreCase("true")) {
+						//	API.getInventoryGUI().openGUI(player, "Commands");
+							API.getInventoryGUI().openGUI(player, "CommandsGUI");
+						} else {
+							//TODO Stars help
+						}
 						API.getInventoryGUI().openGUI(player, "Commands");
 					} else {
 						player.sendMessage(ChatColor.RED + "You do not have permission to use this command");

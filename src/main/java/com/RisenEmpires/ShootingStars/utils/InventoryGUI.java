@@ -17,7 +17,7 @@ public class InventoryGUI implements Listener {
 	
 	public void openGUI(Player player, String GUI) {
 		switch (GUI) {
-			case "Commands":
+			case "CommandsGUI":
 				Inventory inventory = Bukkit.createInventory(null, 9, ChatColor.AQUA + "Shooting Star Commands");
 				
 				if ((player.hasPermission("shootingstars.spawn") || player.hasPermission("shootingstars.*") || player.isOp())) {

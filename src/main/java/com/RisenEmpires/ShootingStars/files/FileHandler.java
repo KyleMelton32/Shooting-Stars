@@ -42,7 +42,7 @@ public class FileHandler {
 		switch (files) {
 			case CONFIG:
 				YamlConfiguration Config = YamlConfiguration.loadConfiguration(file);
-				Config.set("Shooting Stars Configuration", true);
+				Config.set("Shooting Stars Configuration.Enable GUI", true);
 				try {
 					Config.save(file);
 				} catch (IOException e) {

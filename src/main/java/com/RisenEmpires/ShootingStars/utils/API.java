@@ -10,13 +10,16 @@ public class API {
 	private static FileHandler fileHandler;
 	private static InventoryGUI inventoryGUI;
 	private static TerrainManager terrainManager;
+	private Commands commands;
 	
 	public API(ShootingStars shootingStars) {
 		_stars = shootingStars;
 		fileHandler = new FileHandler(_stars);
 		new InventoryGUI();
 		new GUIListeners();
-		new Commands();
+		
+		commands = new Commands(_stars);
+		_stars.getCommand("stars").setExecutor(commands);
 	}
 	
 	public static FileHandler getFileHandler() {
