@@ -31,7 +31,7 @@ public class InventoryGUI implements Listener {
 					itemMeta.setLore(itemLore);
 					item.setItemMeta(itemMeta);
 					
-					inventory.setItem(5, item);
+					inventory.setItem(3, item);
 				}
 				if ((player.hasPermission("shootingstars.reload") || player.hasPermission("shootingstars.*") || player.isOp())) {
 					ItemStack item = new ItemStack (Material.PUMPKIN_PIE);
@@ -44,20 +44,20 @@ public class InventoryGUI implements Listener {
 					itemMeta.setLore(itemLore);
 					item.setItemMeta(itemMeta);
 					
-					inventory.setItem(5, item);
+					inventory.setItem(4, item);
 				}
 				if ((player.hasPermission("shootingstars.version") || player.hasPermission("shootingstars.*") || player.isOp())) {
 					ItemStack item = new ItemStack (Material.LADDER);
 					ItemMeta itemMeta = item.getItemMeta();
-					List<String> itemLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Spawn",
-							ChatColor.RESET + "Spawns a star in 3 minutes at your location");
+					List<String> itemLore = Arrays.asList(ChatColor.UNDERLINE + "" + ChatColor.ITALIC + "Shooting Stars Version",
+							ChatColor.RESET + "Shows the this plugins version");
 					
 					itemMeta.setDisplayName(ChatColor.GREEN + "Version");
 
 					itemMeta.setLore(itemLore);
 					item.setItemMeta(itemMeta);
 					
-					inventory.setItem(5, item);
+					inventory.setItem(6, item);
 				}
 				if ((player.hasPermission("shootingstars.update")) || (player.hasPermission("shootingstars.*"))) {
 					ItemStack item = new ItemStack (Material.HOPPER);
@@ -70,7 +70,7 @@ public class InventoryGUI implements Listener {
 					itemMeta.setLore(itemLore);
 					item.setItemMeta(itemMeta);
 					
-					inventory.setItem(5, item);
+					inventory.setItem(7, item);
 				}
 				
 				player.openInventory(inventory);
