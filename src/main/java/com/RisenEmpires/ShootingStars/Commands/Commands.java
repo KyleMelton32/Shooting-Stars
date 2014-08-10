@@ -42,7 +42,6 @@ public class Commands implements CommandExecutor {
 						} else {
 							//TODO Stars help
 						}
-						API.getInventoryGUI().openGUI(player, "Commands");
 					} else {
 						player.sendMessage(ChatColor.RED + "You do not have permission to use this command");
 					}
